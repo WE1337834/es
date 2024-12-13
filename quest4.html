@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>С Днем Рождения, Учительница!</title>
+    <link rel="stylesheet" href="style.css" />
+ 
+  </head>
+  <body>
+    <img src="/3d-background-with-emojis_23-2149986037.jpg" />
+    <header>Четвертый вопрос 🎉</header>
+    <main>
+      <h1>Добро пожаловать!</h1>
+      <p>
+        Мы поздравляем вас с днем рождения и предлагаем вам угадывать ответы!
+      </p>
+
+      <form id="questions" class="question">
+        <h2>4. Когда человек может быть дома без головы?</h2>
+        <label for="q">
+          <input
+            id="q"
+            type="radio"
+            name="ambassador"
+            value="Елизавета Сергеевна"
+          />
+          Когда 18 летняя Елизавета Сергеевна проверяет наши Кр и Пр
+        </label>
+
+        <label for="q1">
+          <input
+            id="q1"
+            type="radio"
+            name="ambassador"
+            value="Когда выглядывает в окно"
+          />
+          Когда выглядывает в окно
+        </label>
+
+        <label for="q2">
+          <input id="q2" type="radio" name="ambassador" value="Не может" />
+          Не может
+        </label>
+
+        <input type="submit" value="Продолжить" class="button" />
+      </form>
+
+      <div id="result">Ответ неверный!</div>
+    </main>
+
+    <script>
+      document
+        .getElementById("questions")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const selected = document.querySelector(
+            'input[name="ambassador"]:checked'
+          );
+          const resultDiv = document.getElementById("result");
+
+          if (selected && selected.value !== "Елизавета Сергеевна") {
+            resultDiv.style.display = "block";
+          } else {
+            resultDiv.style.display = "none";
+            // Сюда добавить логику перехода на следующую страницу после правильного ответа
+            window.location.href = "quest5.html";
+          }
+        });
+    </script>
+  </body>
+</html>
